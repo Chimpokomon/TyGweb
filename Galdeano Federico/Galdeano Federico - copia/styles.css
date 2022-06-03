@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+}
+
+body{
+    background-color: #333;
+    font-family: sans-serif;
+}
+
+.logoUtn {
+    display: flex;
+}
+
+.logoUtn img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+header {
+    background-color: crimson;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    align-items: center;
+}
+
+footer {
+    width: 100%;
+    background-color: coral;
+    bottom: 0;
+    height: 40px;
+    position: absolute;
+}
+
+.pie {
+    text-align: end;
+    padding: 10px;
+    color: antiquewhite;
+}
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: tomato;
+    left: -200px;
+    transition: all 500ms linear;
+    
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar ul li {
+    color:antiquewhite;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+    cursor: pointer;
+    color: antiquewhite;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+#sidebar a{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+/* Lo referido a la pagina principal */
+
+#opinion {
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 70px;
+    margin-left: 300px;
+    margin-right: 300px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#quote {
+    text-align: center;
+    padding: 200px;
+    margin-left: 300px;
+    margin-right: 300px;   
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+#f0 {
+    text-shadow: 5px -5px brown;
+    color: antiquewhite;    
+}
+
+#f1 {
+    text-shadow: -5px -5px brown;
+    color: antiquewhite;
+}
+
+#f2 {
+    text-shadow: 5px 5px brown;
+    color: antiquewhite;
+}
+
+/* Lo referido a la API de usuarios */
+
+#usu {
+    text-align: center;
+    padding: 200px;
+    margin-left: 300px;
+    margin-right: 300px;   
+    margin-top: 80px;
+    margin-bottom: 50px;
+    display: none;
+    height: 300px;
+}
+
+.container {
+    color: antiquewhite;
+}
+
+
+/* Lo referido a la API de pokemon */
+
+
+#pok {
+    display: none;
+}
+
+.contenedor{
+    margin-top: 60px;   
+    text-align: center;
+    margin: auto;
+    height: 300px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 250px;
+    height: 100px;
+    padding-top: 30px;
+}
+
+.contenedor input{
+    text-align: center;
+}
+
+.contenedor button{
+    margin-top: 20px;
+    margin-bottom: -20px;
+    background-color: crimson;
+}
+
+.pokemon{
+    width: 150px;
+    height: 150px;
+    margin: 40px auto;
+    display: inline-block;
+}
+
+p{
+    margin-top: -30px;
+}
+
+#button {
+    color: antiquewhite;
+}
+
+#info {
+    color: antiquewhite;
+}
+
+
+

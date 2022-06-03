@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+    <title>TP Nro1</title>
+</head>
+<body>
+
+    <header>
+        <div class="logoUtn">
+            <img src="utn.png" alt="logo utn">
+        </div>
+        <h2>
+            TP nro1 - Galdeano Federico
+        </h2>
+    </header>
+
+    
+    <div id="sidebar">
+        <div class="toggle-btn">
+            <span>&#9776</span>
+        </div>        
+        
+        <ul>
+            <li><a href="#" onclick="refrescarPagina()">Inicio</a></li>
+            <li><a href="#" onclick="showUsu()">Usuarios</a></li>
+            <li><a href="#" onclick="showPok()">Pokedex</a></li>
+            <li><a href="#" onclick="clearScrean()">Limpiar pantalla</a></li>
+        </ul>
+    </div>
+
+
+    <section>
+
+        <!-- Codigo de la pantalla inicial -->
+
+        <div id="ini">
+            <div id="quote">
+
+            </div><br>
+
+            <p id="opinion">
+                Mi objetivo con la cátedra es adquidir nuevos conocimientos y aprender a 
+                utilizar nuevas herramientas que me acerquen al "mundo web", ya que es algo necesario y 
+                de importante demanda en el ámbito laboral.
+            </p>
+
+        </div>
+
+        <!-- Codigo de la API de usuarios -->
+        
+        <div id="usu">
+            
+            <div class="container">
+
+            </div>
+            
+        </div>
+
+        <!-- Codigo de la API de pokemons -->
+        
+        <div id="pok">
+
+            <img src="pokemon.png" class="logo" alt="">
+            
+            <div class="contenedor">
+                
+                <input type="text" id="caja" placeholder="Ingrese Un Numero">
+                <button class="text-white btn bg-danger" id="button">Buscar</button>
+                <img src="" id="img" class="pokemon" alt="">
+                
+                <p id="info" class="text-white"></p>
+            
+            </div>
+
+            <script>
+                let buton=document.getElementById('button')
+        
+                buton.addEventListener('click',()=>{
+                    let caja=document.getElementById('caja').value
+                    let img=document.getElementById('img')
+                    let p=document.getElementById('info')
+                    let xhttp=new XMLHttpRequest()
+                    xhttp.open("GET",`https://pokeapi.co/api/v2/pokemon/${caja}`)
+                    xhttp.send()
+        
+                    xhttp.onreadystatechange=function () {
+                        if(this.readyState==4 && this.status==200)
+                        {
+                        let datoPokemon=JSON.parse( this.responseText)
+                        console.log(datoPokemon)
+                        img.setAttribute("src",datoPokemon.sprites.front_default)
+                        p.textContent=datoPokemon.name
+                        }
+                    }
+        
+                })
+            </script>
+        
+        </div>
+    </section>
+
+
+    <footer>
+        <div>
+            <h3 class="pie">
+                Tecnología y Gestión Web 2022
+            </h3>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
